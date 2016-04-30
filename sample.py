@@ -5,7 +5,7 @@ import subprocess
 import logging
 import logging.config
 
-logging.config.fileConfig("/home/work/ping-tool/logging.conf")
+logging.config.fileConfig("./conf/logging.conf")
 logger = logging.getLogger("pingApp")
 
 hosts = ['172.17.0.1', '172.17.0.2', '192.168.99.100']
