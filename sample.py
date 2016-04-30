@@ -3,19 +3,11 @@
 
 import subprocess
 import logging
+import logging.config
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
+logging.config.fileConfig("./conf/logging.conf")
+logger = logging.getLogger("pingApp")
 
-handler = logging.StreamHandler()
-handler.setLevel(logging.DEBUG)
-
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-handler.setFormatter(formatter)
-
-logger.addHandler(handler)
-
-# host = '172.17.0.1'
 hosts = ['172.17.0.1', '172.17.0.2', '192.168.99.100']
 
 for host in hosts:
@@ -28,4 +20,7 @@ for host in hosts:
     res = "Error. (" + host + ")"
   
   logger.debug('test ------- mesage')
-  logger.info(res)
+  
+  for line in res.splitlines():
+    logger.info(line)
+
