@@ -3,13 +3,15 @@
 
 import subprocess
 
-args = ['ping', '-c 3', '192.168.99.100']
+# 192.168.99.100'
+host = '172.17.0.1'
+args = ['ping', '-c 3', host]
 
 try:
-  res1 = subprocess.check_call(args)
-  res2 = subprocess.check_output(args)
+#  res1 = subprocess.check_call(args)
+  res = subprocess.check_output(args)
 except:
-  print "Error."
+  res = "Error. (" + host + ")"
 
-print res1
-print res2
+#print res1
+print res
