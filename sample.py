@@ -2,6 +2,15 @@
 # -*- coding: utf-8 -*-
 
 import subprocess
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
+handler = logging.StreamHandler()
+handler.setLevel(logging.DEBUG)
+
+logger.addHandler(handler)
 
 # host = '172.17.0.1'
 hosts = ['172.17.0.1', '172.17.0.2', '192.168.99.100']
@@ -15,4 +24,5 @@ for host in hosts:
   except:
     res = "Error. (" + host + ")"
   
-  print res
+  logger.debug('test ------- mesage')
+  logger.info(res)
