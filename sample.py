@@ -4,9 +4,19 @@
 import subprocess
 import logging
 import logging.config
+import datetime
+
+today = datetime.datetime.today()
 
 logging.config.fileConfig("./conf/logging.conf")
 logger = logging.getLogger("pingApp")
+console_out = logging.getLogger("console")
+
+start_time = today.strftime("%Y/%m/%d %H:%M:%S")
+console_out.info("start : " + start_time)
+
+
+logger.debug('ping check : start')
 
 hosts = ['172.17.0.1', '172.17.0.2', '192.168.99.100']
 
@@ -19,8 +29,8 @@ for host in hosts:
   except:
     res = "Error. (" + host + ")"
   
-  logger.debug('test ------- mesage')
-  
   for line in res.splitlines():
     logger.info(line)
 
+
+console_out.info("end")
