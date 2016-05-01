@@ -5,12 +5,10 @@ import subprocess
 import logging
 import logging.config
 import datetime
+import argparse
 
-print "test1"
 
 today = datetime.datetime.today()
-
-import argparse
 
 parser = argparse.ArgumentParser(description='This is tool sample.')
 parser.add_argument('-t', '--tool', type=str, help='tool name')
@@ -19,8 +17,6 @@ args = parser.parse_args()
 logging.config.fileConfig("./conf/logging.conf")
 logger = logging.getLogger("pingApp")
 console_out = logging.getLogger("console")
-
-print "test2"
 
 start_time = today.strftime("%Y/%m/%d %H:%M:%S")
 console_out.info("start : " + start_time)
