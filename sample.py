@@ -6,6 +6,8 @@ import logging
 import logging.config
 import datetime
 
+print "test1"
+
 today = datetime.datetime.today()
 
 import argparse
@@ -17,6 +19,8 @@ args = parser.parse_args()
 logging.config.fileConfig("./conf/logging.conf")
 logger = logging.getLogger("pingApp")
 console_out = logging.getLogger("console")
+
+print "test2"
 
 start_time = today.strftime("%Y/%m/%d %H:%M:%S")
 console_out.info("start : " + start_time)
