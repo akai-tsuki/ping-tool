@@ -5,6 +5,12 @@ import subprocess
 import logging
 import logging.config
 
+import argparse
+
+parser = argparse.ArgumentParser(description='This is tool sample.')
+parser.add_argument('-t', '--tool', type=str, help='tool name')
+args = parser.parse_args()
+
 logging.config.fileConfig("./conf/logging.conf")
 logger = logging.getLogger("pingApp")
 
