@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+u"""Sample program
+This is commnet sample.
+"""
 import subprocess
 import logging
 import logging.config
@@ -14,6 +17,9 @@ console_out = logging.getLogger("console")
 
 def test():
   print "call test"
+
+def hello():
+  return "hello"
 
 def doPing(hosts):
   logger.debug('ping check : start')
