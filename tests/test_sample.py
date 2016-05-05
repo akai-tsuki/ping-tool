@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-import nose
 import sample
 
 class TestSample(unittest.TestCase):
